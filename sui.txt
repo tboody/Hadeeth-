@@ -1,0 +1,130 @@
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, ul, ol, li, form, label {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+  }
+  
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: grey;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif; /* Use your preferred font */
+  }
+  
+  .container {
+    width: 680px;
+    background-color: rgb(212, 212, 212);
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Add this line */
+  }
+  
+  header {
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+  }
+  
+  .content {
+    margin-top: 34px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .textarea {
+    text-align: center;
+  }
+  
+  .hadis {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .buttons {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: black; /* initial button color */
+    color: white;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* smooth transition */
+  }
+  
+  .buttons button:hover {
+    background-color: grey; /* color on hover */
+  }
+  
+  .buttons button.smaller {
+    transform: scale(0.8); /* make the button smaller */
+  }
+  
+  .feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .feature i {
+    margin-right: 10px;
+  }
+  
+  .newb {
+    color: #eee;
+    border: 1px solid #afafaf;
+    background-color: black;
+    padding: 10px 20px;
+    border-radius: 7px;
+    cursor: pointer;
+  }
+  
+  .newb:hover {
+    border: 1px solid grey;
+    background-color: grey;
+    color: #fff;
+    transition-duration: 0.5s;
+  }
+  
+  /* CSS */
+  .sound, .stop {
+    color: grey;
+    cursor: pointer;
+    margin-right: 10px; /* Add some space between the icons */
+  }
+  
+  .newb {
+    cursor: pointer;
+  }
+  
+  .logo {
+    position: absolute;
+    top: 3px;
+    right: 10px;
+    width: 80px; /* Adjust the width as needed */
+    height: auto;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      width: 90%;
+    }
+    .logo {
+      width: 40px; /* Adjust for smaller screens */
+    }
+  }

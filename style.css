@@ -1,0 +1,251 @@
+/* Body Background */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #fcfdfd; /* Light background */
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Main Container */
+.container {
+    width: 680px;
+    background-color: rgba(252, 253, 253, 0.9); /* Light background */
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    border: 1px solid #a7b7bb; /* Light Grey Border */
+}
+
+/* Header */
+header {
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
+    color: #035d6f; /* Dark Teal */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: white;
+    opacity: 0.1;
+    filter: blur(10px);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    border-radius: 50%;
+}
+
+/* Content Styling */
+.content {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textarea {
+    text-align: center;
+}
+
+/* Hadith Section */
+.hadis {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #6a7b7f; /* Medium Grey Text */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-left: 4px solid #035d6f; /* Dark Teal Border */
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+/* Buttons */
+.buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #035d6f; /* Dark Teal Button */
+    color: white;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    margin: 0 10px;
+}
+
+.buttons button:hover {
+    background-color: #e27c39; /* Bright Orange on Hover */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Smaller Buttons */
+.buttons button.smaller {
+    transform: scale(0.8);
+}
+
+/* Feature Section */
+.feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* New Button Style */
+.newb {
+    color: #eee;
+    border: 1px solid #afafaf;
+    background-color: #035d6f; /* Dark Teal Button */
+    padding: 10px 20px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.newb:hover {
+    border-color: #e27c39; /* Orange Border on Hover */
+    background-color: #e27c39; /* Bright Orange on Hover */
+    color: #fff;
+}
+
+/* Logo */
+/* Logo */
+.logo {
+    position: absolute;
+    top: -25px;
+    right: -40px;
+    width: 160px; /* Increased the width to make the logo bigger */
+    height: auto;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+
+.logo::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: white;
+    opacity: 0.1;
+    filter: blur(10px);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    border-radius: 50%;
+}
+
+.logo:hover {
+    transform: rotate(15deg) scale(1.1);
+}
+
+/* Additional Creative Styling */
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.05), transparent);
+    z-index: -1;
+    border-radius: 14px;
+}
+
+.buttons button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hadith Quotation Marks */
+.hadis:before {
+    content: '“';
+    font-size: 40px;
+    color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: -20px;
+    left: -20px;
+}
+
+.hadis:after {
+    content: '”';
+    font-size: 40px;
+    color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+    .logo {
+        width: 40px;
+    }
+    .buttons button {
+        margin: 10px 0;
+    }
+}
+
+/* Narrator and Book Styling */
+.narrator-book-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+#narrator, #book {
+    flex: 1;
+}
+
+#narrator {
+    text-align: left;
+}
+
+#book {
+    text-align: right;
+}
+
+#hadis {
+    animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
