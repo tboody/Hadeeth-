@@ -1,0 +1,2 @@
+# Hadeeth-
+Random hadeeth generator
