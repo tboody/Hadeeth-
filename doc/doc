@@ -1,2 +1,87 @@
-Current Date and Time (UTC - YYYY-MM-DD HH:MM:SS formatted): 2025-12-09 22:11:49
-Current User's Login: tboody
+Random Hadith Generator System
+Table of Contents
+
+Overview
+High-Level Architecture
+Core Components
+Data Flow
+Code Implementation
+Integration Points
+Configuration
+Monitoring and Operations
+
+Overview
+The Random Hadith Generator is a web-based application that displays random Islamic hadiths to users by fetching data from an external API endpoint.
+Key Characteristics:
+
+RESTful API integration
+Real-time data fetching
+Audio playback for hadith recitation
+
+High-Level Architecture
+mermaidgraph TD
+    A[User Browser] --> B[index.html]
+    B --> C[script.js]
+    C --> D[Vercel API]
+    D --> E[Hadith Database]
+The system uses a client-server architecture where JavaScript fetches hadith data from the Vercel API endpoint.
+Core Components
+
+HTML Interface - Basic page structure
+JavaScript Controller - Handles API requests
+Stylesheet - Visual styling
+
+Data Flow
+When the user clicks "New Hadith":
+
+JavaScript calls fetchRandomHadith()
+API request sent to Vercel endpoint
+Data returned and displayed on page
+
+Code Implementation
+Main API Function
+File: script.js
+javascriptasync function fetchRandomHadith() {
+  try {
+    const response = await fetch('https://random-hadith-generator.vercel.app/bukhari/');
+    const data = await response.json();
+    displayHadith(data.data.hadith_english, data.data.header, data.data.book);
+  } catch (error) {
+    console.error('Error fetching Hadith:', error);
+  }
+}
+Explanation: This function fetches hadith data from the Vercel API and passes it to the display function.
+Display Function
+File: script.js
+javascriptfunction displayHadith(hadith, narrator, book) {
+  hadithElement.innerText = hadith;
+  narratorElement.innerText = narrator;
+  bookElement.innerText = book;
+}
+Explanation: Updates the page with the hadith content.
+Audio Playback
+File: script.js
+javascriptsoundButton.addEventListener('click', function() {
+  const utterance = new SpeechSynthesisUtterance(hadithElement.innerText);
+  utterance.lang = 'ar-SA';
+  window.speechSynthesis.speak(utterance);
+});
+Explanation: Plays the hadith text using the browser's speech synthesis API.
+Integration Points
+External API: https://random-hadith-generator.vercel.app/bukhari/
+Returns JSON format:
+json{
+  "data": {
+    "hadith_english": "...",
+    "header": "...",
+    "book": "..."
+  }
+}
+Font Services: Google Fonts CDN for typography
+Configuration
+Set the API endpoint in your environment:
+bashAPI_ENDPOINT=https://random-hadith-generator.vercel.app/bukhari/
+Monitoring and Operations
+Error logging to console:
+javascriptconsole.error('Error fetching Hadith:', error);
+The system logs API errors for debugging purposes.
